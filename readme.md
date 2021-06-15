@@ -54,7 +54,7 @@ Further documentation is provided [here](https://github.com/spring-projects/spri
 
 ## redis configuration
 Make sure redis is installed on your system, if not download via   `brew install redis`
-Once redis is installed start redis server by redis-cli
+Once redis is installed start redis server by redis-server
 to moniter if key values are saved moniter redis via `redis-cli monitor`
 
 Make sure you have spring-boot-starter-data-redis dependency added to your pom
