@@ -34,10 +34,9 @@ Our issue tracker is available here: https://github.com/spring-projects/spring-p
 
 We have used mySql Database for this implementation
 Once login to your mysql:
-run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/user.sql to create database
-run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/schema.sql to create tables
-run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/data.sql add data to tables
-
+`run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/user.sql to create database`
+`run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/schema.sql to create tables`
+`run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/data.sql add data to tables`
  
 use profile: `spring.profiles.active=mysql` for MySql.
 in application-mysql.properties make sure you update
