@@ -59,6 +59,8 @@ to moniter if key values are saved moniter redis via `redis-cli monitor`
 
 Make sure you have spring-boot-starter-data-redis dependency added to your pom
 
+make sure your pojo implements Serializable
+
 annotate controllers with `@CacheConfig(cacheNames = {"key"})`
 annotate repo/service with 	`@Cacheable(value = "key")`
 
