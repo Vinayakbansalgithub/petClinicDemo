@@ -33,13 +33,11 @@ Our issue tracker is available here: https://github.com/spring-projects/spring-p
 ## Database configuration
 
 We have used mySql Database for this implementation
-Once login to your mysql
+Once login to your mysql:
 run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/user.sql to create database
 run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/schema.sql to create tables
 run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/main/resources/db/mysql/data.sql add data to tables
 
-gets populated at startup with data. The h2 console is automatically exposed at `http://localhost:8080/h2-console`
-and it is possible to inspect the content of the database using the `jdbc:h2:mem:testdb` url.
  
 use profile: `spring.profiles.active=mysql` for MySql.
 in application-mysql.properties make sure you update
@@ -48,13 +46,26 @@ spring.datasource.username=your_usee
 spring.datasource.password=your_password
 
 
-You could start MySql locally with whatever installer works for your OS, or with docker:
+use profile: `spring.profiles.active=mysql` for MySql.
+in application-mysql.properties make sure you update
+spring.datasource.url=jdbc:mysql://localhost:3306/petclinic
+spring.datasource.username=your_usee
+spring.datasource.password=your_password
 
-```
-docker run -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
-```
 
 Further documentation is provided [here](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt).
+
+
+## redis configuration
+
+Make sure you have spring-boot-starter-data-redis dependency added to your pom
+
+in application.properties file make sure you have 
+spring.cache.type=redis
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.cache.cache-names=owners,pets
+spring.redis.timeout=60000
 
 ## Working with Petclinic in your IDE
 
@@ -73,7 +84,7 @@ The following items should be installed in your system:
 
 1) On the command line
     ```
-    git clone https://github.com/spring-projects/spring-petclinic.git
+    git clone https://github.com/Vinayakbansalgithub/petClinicDemo.git
     ```
 2) Inside Eclipse or STS
     ```
@@ -91,7 +102,7 @@ The following items should be installed in your system:
 
 4) Navigate to Petclinic
 
-    Visit [http://localhost:8080](http://localhost:8080) in your browser.
+    Visit [http://localhost:9191](http://localhost:9191) in your browser.
 
 
 ## Looking for something in particular?
@@ -99,7 +110,7 @@ The following items should be installed in your system:
 |Spring Boot Configuration | Class or Java property files  |
 |--------------------------|---|
 |The Main Class | [PetClinicApplication](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java) |
-|Properties Files | [application.properties](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources) |
+|Properties Files | [application.properties](https://github.com/Vinayakbansalgithub/petClinicDemo/tree/main/src/main/resources) |
 |Caching | [CacheConfiguration](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java) |
 
 ## Interesting Spring Petclinic branches and forks
@@ -107,7 +118,7 @@ The following items should be installed in your system:
 The Spring Petclinic "main" branch in the [spring-projects](https://github.com/spring-projects/spring-petclinic)
 GitHub org is the "canonical" implementation, currently based on Spring Boot and Thymeleaf. There are
 [quite a few forks](https://spring-petclinic.github.io/docs/forks.html) in a special GitHub org
-[spring-petclinic](https://github.com/spring-petclinic). If you have a special interest in a different technology stack
+[spring-petclinic](https://github.com/Vinayakbansalgithub/petClinicDemo). If you have a special interest in a different technology stack
 that could be used to implement the Pet Clinic then please join the community there.
 
 
@@ -125,7 +136,7 @@ Here is a list of them:
 
 # Contributing
 
-The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
+The [issue tracker](https://github.com/Vinayakbansalgithub/petClinicDemo/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
 
 For pull requests, editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <https://editorconfig.org>. If you have not previously done so, please fill out and submit the [Contributor License Agreement](https://cla.pivotal.io/sign/spring).
 
