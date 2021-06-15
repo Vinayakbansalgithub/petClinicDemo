@@ -54,8 +54,14 @@ Further documentation is provided [here](https://github.com/spring-projects/spri
 
 
 ## redis configuration
+Make sure redis is installed on your system, if not download via   `brew install redis`
+Once redis is installed start redis server by redis-cli
+to moniter if key values are saved moniter redis via `redis-cli monitor`
 
 Make sure you have spring-boot-starter-data-redis dependency added to your pom
+
+annotate controllers with `@CacheConfig(cacheNames = {"key"})`
+annotate repo/service with 	`@Cacheable(value = "key")`
 
 in application.properties file make sure you have 
 `spring.cache.type=redis`
@@ -63,6 +69,7 @@ in application.properties file make sure you have
 `spring.redis.port=6379`
 `spring.cache.cache-names=owners,pets`
 `spring.redis.timeout=60000`
+
 
 ## Working with Petclinic in your IDE
 
@@ -108,7 +115,7 @@ The following items should be installed in your system:
 |--------------------------|---|
 |The Main Class | [PetClinicApplication](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java) |
 |Properties Files | [application.properties](https://github.com/Vinayakbansalgithub/petClinicDemo/tree/main/src/main/resources) |
-|Caching | [application.properties redis config]|
+|Caching | [application.properties redis config with required annotations on controllers(@CacheConfig) and Repository(@Cacheable)]|
 
 ## Interesting Spring Petclinic branches and forks
 
