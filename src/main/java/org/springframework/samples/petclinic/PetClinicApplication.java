@@ -18,6 +18,10 @@ package org.springframework.samples.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * PetClinic Spring Boot Application.
@@ -26,8 +30,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication(proxyBeanMethods = false)
-public class PetClinicApplication {
-
+@ComponentScan(value = "org.springframework.samples")
+@EnableJpaRepositories("org.springframework.samples") 
+@EnableCaching
+public class PetClinicApplication {	
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}

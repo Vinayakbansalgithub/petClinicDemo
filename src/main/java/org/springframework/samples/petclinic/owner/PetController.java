@@ -15,6 +15,8 @@
  */
 package org.springframework.samples.petclinic.owner;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
@@ -32,6 +34,7 @@ import java.util.Collection;
  */
 @Controller
 @RequestMapping("/owners/{ownerId}")
+@CacheConfig(cacheNames = {"pets"})
 class PetController {
 
 	private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
@@ -51,17 +54,22 @@ class PetController {
 	}
 
 	@ModelAttribute("owner")
+	@Cacheable()
 	public Owner findOwner(@PathVariable("ownerId") int ownerId) {
+		System.out.println("findOwner called");
 		return this.owners.findById(ownerId);
 	}
 
 	@InitBinder("owner")
 	public void initOwnerBinder(WebDataBinder dataBinder) {
+		System.out.println("initOwnerBinder called");
+
 		dataBinder.setDisallowedFields("id");
 	}
 
 	@InitBinder("pet")
 	public void initPetBinder(WebDataBinder dataBinder) {
+		System.out.println("initPetBinder called");
 		dataBinder.setValidator(new PetValidator());
 	}
 

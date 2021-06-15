@@ -21,9 +21,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 class WelcomeController {
+	
+	WelcomeController(){
+		System.out.println("welcome controller called======");
+}
 
 	@GetMapping("/")
 	public String welcome() {
+		System.out.println("=========== welcome call");
 		return "welcome";
 	}
 
