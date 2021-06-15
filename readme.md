@@ -41,16 +41,13 @@ run source /Users/vinayakbansal/eclipse-workspace/Study/spring-petclinic/src/mai
  
 use profile: `spring.profiles.active=mysql` for MySql.
 in application-mysql.properties make sure you update
-spring.datasource.url=jdbc:mysql://localhost:3306/petclinic
-spring.datasource.username=your_usee
-spring.datasource.password=your_password
+`spring.datasource.url=jdbc:mysql://localhost:3306/petclinic`
+`spring.datasource.username=your_user`
+`spring.datasource.password=your_password`
 
 
 use profile: `spring.profiles.active=mysql` for MySql.
 in application-mysql.properties make sure you update
-spring.datasource.url=jdbc:mysql://localhost:3306/petclinic
-spring.datasource.username=your_usee
-spring.datasource.password=your_password
 
 
 Further documentation is provided [here](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt).
@@ -61,11 +58,11 @@ Further documentation is provided [here](https://github.com/spring-projects/spri
 Make sure you have spring-boot-starter-data-redis dependency added to your pom
 
 in application.properties file make sure you have 
-spring.cache.type=redis
-spring.redis.host=localhost
-spring.redis.port=6379
-spring.cache.cache-names=owners,pets
-spring.redis.timeout=60000
+`spring.cache.type=redis`
+`spring.redis.host=localhost`
+`spring.redis.port=6379`
+`spring.cache.cache-names=owners,pets`
+`spring.redis.timeout=60000`
 
 ## Working with Petclinic in your IDE
 
@@ -111,7 +108,7 @@ The following items should be installed in your system:
 |--------------------------|---|
 |The Main Class | [PetClinicApplication](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java) |
 |Properties Files | [application.properties](https://github.com/Vinayakbansalgithub/petClinicDemo/tree/main/src/main/resources) |
-|Caching | [CacheConfiguration](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java) |
+|Caching | [application.properties redis config]|
 
 ## Interesting Spring Petclinic branches and forks
 
@@ -120,18 +117,6 @@ GitHub org is the "canonical" implementation, currently based on Spring Boot and
 [quite a few forks](https://spring-petclinic.github.io/docs/forks.html) in a special GitHub org
 [spring-petclinic](https://github.com/Vinayakbansalgithub/petClinicDemo). If you have a special interest in a different technology stack
 that could be used to implement the Pet Clinic then please join the community there.
-
-
-## Interaction with other open source projects
-
-One of the best parts about working on the Spring Petclinic application is that we have the opportunity to work in direct contact with many Open Source projects. We found some bugs/suggested improvements on various topics such as Spring, Spring Data, Bean Validation and even Eclipse! In many cases, they've been fixed/implemented in just a few days.
-Here is a list of them:
-
-| Name | Issue |
-|------|-------|
-| Spring JDBC: simplify usage of NamedParameterJdbcTemplate | [SPR-10256](https://jira.springsource.org/browse/SPR-10256) and [SPR-10257](https://jira.springsource.org/browse/SPR-10257) |
-| Bean Validation / Hibernate Validator: simplify Maven dependencies and backward compatibility |[HV-790](https://hibernate.atlassian.net/browse/HV-790) and [HV-792](https://hibernate.atlassian.net/browse/HV-792) |
-| Spring Data: provide more flexibility when working with JPQL queries | [DATAJPA-292](https://jira.springsource.org/browse/DATAJPA-292) |
 
 
 # Contributing
