@@ -49,7 +49,7 @@ public interface PetRepository extends Repository<Pet, Integer> {
 	 * @return the {@link Pet} if found
 	 */
 	@Transactional(readOnly = true)
-	@Cacheable("petCache")
+	@Cacheable(value="pets", key = "#id")
 	Pet findById(Integer id);
 
 	/**

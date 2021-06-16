@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.vet;
 
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;

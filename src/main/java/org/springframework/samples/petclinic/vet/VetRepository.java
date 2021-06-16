@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.vet;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import org.springframework.cache.annotation.Cacheable;
@@ -40,7 +41,6 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	 * @return a <code>Collection</code> of <code>Vet</code>s
 	 */
 	@Transactional(readOnly = true)
-	@Cacheable("vets")
 	Collection<Vet> findAll() throws DataAccessException;
 
 }

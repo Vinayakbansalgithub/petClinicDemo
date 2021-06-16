@@ -29,15 +29,15 @@ import org.springframework.context.annotation.Configuration;
  * accessible via JMX.
  */
 @Configuration(proxyBeanMethods = false)
-@EnableCaching
+//@EnableCaching
 class CacheConfiguration {
 
-	@Bean
-	public JCacheManagerCustomizer petclinicCacheConfigurationCustomizer() {
-		return cm -> {
-			cm.createCache("vets", cacheConfiguration());
-		};
-	}
+//	@Bean
+//	public JCacheManagerCustomizer petclinicCacheConfigurationCustomizer() {
+//		return cm -> {
+//			cm.createCache("vets", cacheConfiguration());
+//		};
+//	}
 
 	/**
 	 * Create a simple configuration that enable statistics via the JCache programmatic
@@ -48,8 +48,8 @@ class CacheConfiguration {
 	 * configuration options (like the size limit) must be set via a configuration
 	 * mechanism that is provided by the selected JCache implementation.
 	 */
-	private javax.cache.configuration.Configuration<Object, Object> cacheConfiguration() {
-		return new MutableConfiguration<>().setStatisticsEnabled(true);
-	}
+//	private javax.cache.configuration.Configuration<Object, Object> cacheConfiguration() {
+//		return new MutableConfiguration<>().setStatisticsEnabled(true);
+//	}
 
 }
