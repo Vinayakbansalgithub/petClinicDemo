@@ -45,10 +45,6 @@ in application-mysql.properties make sure you update
 `spring.datasource.password=your_password`
 
 
-use profile: `spring.profiles.active=mysql` for MySql.
-in application-mysql.properties make sure you update
-
-
 Further documentation is provided [here](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt).
 
 
@@ -56,6 +52,8 @@ Further documentation is provided [here](https://github.com/spring-projects/spri
 Make sure redis is installed on your system, if not download via   `brew install redis`
 Once redis is installed start redis server by redis-server
 to moniter if key values are saved moniter redis via `redis-cli monitor`
+
+Make sure we have `@EnableCaching` on main class
 
 Make sure you have spring-boot-starter-data-redis dependency added to your pom
 
